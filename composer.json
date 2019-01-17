@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "": "vendor\\gallesweb\\php-classes\\src"
+            "gallesweb\\": "vendor\\gallesweb\\php-classes\\src"
         }
     }
 }
