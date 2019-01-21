@@ -134,17 +134,18 @@ class User extends Model{
 
 		$sql = new Sql();
 
-		$results = $sql->select("CALL sp_users_save(:desperson, :deslogin, :despassword, :desemail, :nrphone, :inadmin)", 
+		$results = $sql->select("CALL sp_users_save(:desperson, :deslogin, :despassword, :desemail, :nrphone, :desinadmin)", 
 			array(
 			":desperson"=>utf8_decode($this->getdesperson()),
 			":deslogin"=>$this->getdeslogin(),
 			":despassword"=>User::getPasswordHash($this->getdespassword()),
 			":desemail"=>$this->getdesemail(),
 			":nrphone"=>$this->getnrphone(),
-			":inadmin"=>$this->getinadmin()
+			":desinadmin"=>$this->getinadmin()
 		));
 
-		$this->setData($results[0]);
+		$data = $results[0];
+		$this->setData($data);
 
 	}
 
