@@ -327,6 +327,14 @@ class Cart extends Model{
 	    $this->setvlsubtotal($totals['vlprice']);
 	    $this->setvltotal($totals['vlprice'] + $this->getvlfreight());
 	}
+
+	public function removeSession()
+	{
+	     $_SESSION[Cart::SESSION] = NULL;
+	     session_regenerate_id();
+
+	     /*$cart->removeSession();*/
+	}
 	
 }
 
