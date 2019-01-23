@@ -689,7 +689,7 @@ $app->post("/profile/change-password", function(){
 
 	$user->update();
 
-	User::setSuccess("Senha alteda com sucesso.");
+	User::setSuccess("Senha alterada com sucesso.");
 	header("Location: /profile/change-password");
 	exit;
 
