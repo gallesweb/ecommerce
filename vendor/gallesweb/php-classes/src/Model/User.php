@@ -494,11 +494,12 @@ class User extends Model{
 				SELECT sql_calc_found_rows *
 				FROM tb_users a 
 				INNER JOIN tb_persons b USING(idperson) 
-				WHERE b.desperson LIKE :search OR b.desemail = :search OR a.deslogin LIKE :search
+				WHERE b.desperson LIKE :search OR b.desemail = :search OR a.deslogin LIKE :search OR b.idperson LIKE :id
 				ORDER BY b.desperson
 				LIMIT $start, $itemsPerPage;
 			", [
-				":search"=>"%".$search."%"
+				":search"=>"%".$search."%",
+				":id"=>$search
 			]);
 
 		$resultTotal = $sql->select("SELECT found_rows() AS nrtotal;");

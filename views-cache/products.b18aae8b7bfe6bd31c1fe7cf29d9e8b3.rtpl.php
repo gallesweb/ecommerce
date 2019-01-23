@@ -61,6 +61,10 @@
                       <a href="/admin/products/<?php echo htmlspecialchars( $value1["idproduct"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/delete" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
                     </td>
                   </tr>
+                  <?php }else{ ?>
+                  <tr>
+                      <td colspan="6">Nenhum produto foi encontrado.</td>
+                  </tr>
                   <?php } ?>
                 </tbody>
               </table>
